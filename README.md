@@ -1,6 +1,6 @@
 # EF.WWW
 **We make dev easy.**
-- [GO](https://go.eframework.cn): [https://go.eframework.cn](https://go.eframework.cn)
-- [U3D](https://u3d.eframework.cn): [https://u3d.eframework.cn](https://u3d.eframework.cn)
-- [Wiki](https://wiki.eframework.cn): [https://wiki.eframework.cn](https://wiki.eframework.cn)
-- [Forum](https://forum.eframework.cn): [https://forum.eframework.cn](https://forum.eframework.cn)
+- [GO](go.eframework.cn): [go.eframework.cn](go.eframework.cn)
+- [U3D](u3d.eframework.cn): [u3d.eframework.cn](u3d.eframework.cn)
+- [Wiki](wiki.eframework.cn): [wiki.eframework.cn](wiki.eframework.cn)
+- [Forum](forum.eframework.cn): [forum.eframework.cn](forum.eframework.cn)
