@@ -11,7 +11,7 @@ jobs:
             ## 检出工程
             - uses: actions/checkout@v3
               with: 
-                token: ${{ secrets.GH_PAT }}
+                token: ${{ secrets.PAT_CI_TOKEN }}
                 submodules: 'true'
 
             ## 配置环境
