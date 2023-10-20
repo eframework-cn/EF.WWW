@@ -19,30 +19,20 @@ jobs:
                 repository: 'eframework-cn/.github'
                 path: 'dst'
                 
-            - run: ls
             ## 配置环境
             - run: git config --global user.name github-actions[bot]
             - run: git config --global user.email github-actions[bot]@users.noreply.github.com
             - run: git config --global --add safe.directory /github/workspace
-          
-            ## 暂存文档
-            - run: mkdir ./.swap
-            - run: cp -r ./** ./.swap
 
-            ## 切换分支
-            - run: git fetch origin
-            - run: git checkout profile
-            - run: git submodule update --init
-            - run: git submodule foreach 'git checkout master'
-            - run: git submodule foreach 'git rm -rf ./profile'
-            - run: git submodule foreach 'git commit -a -m "[Sync Profile] commit temporary"'
-            
-            ## 提交文档
-            - run: mkdir ./profile/profile
-            - run: mv ./.swap/** ./profile/profile
-            - run: rm -rf ./.swap
-            - run: git submodule foreach 'git add ./profile/*'
-            - run: git submodule foreach 'git commit -a -m "[Sync Profile] commit profile"'
-            - run: git submodule foreach 'git push'
-            - run: git commit -a -m "[Sync Profile] commit submodule"
+            ## 清理目录
+            - run: cd ./dst
+            - run: git rm -rf ./profile
+            - run: git commit -am "[Sync Profile] commit temporary"
+            - run: mkdir ./profile
+              
+            ## 移动文档
+            - run: cp -r ../src/** ./profile
+            - run: git add ./profile/*
+            - run: git commit -am "[Sync Profile] commit profile"
             - run: git push
+            
