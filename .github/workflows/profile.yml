@@ -11,8 +11,7 @@ jobs:
             ## 检出工程
             - uses: actions/checkout@v4
               with:
-                token: ${{ secrets.PAT_ACTION }}
-                submodules: 'true'
+                repository: 'https://github.com/eframework-cn/EF.WWW.git'
 
             ## 配置环境
             - run: git config --global user.name github-actions[bot]
