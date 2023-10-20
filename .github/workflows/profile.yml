@@ -25,7 +25,7 @@ jobs:
             ## 切换分支
             - run: git fetch origin
             - run: git checkout profile
-            - run: git submodule update --init
+            - run: git submodule update
             - run: git submodule foreach 'git checkout master'
             - run: git submodule foreach 'git rm -rf ./profile'
             - run: git submodule foreach 'git commit -a -m "[Sync Profile] commit temporary"'
