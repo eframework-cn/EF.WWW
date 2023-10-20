@@ -1,0 +1,51 @@
+name: Generate Profile
+on:
+    push:
+        paths:
+          - '*'
+
+jobs:
+    doc:
+        name: Generate Profile
+        runs-on: ubuntu-latest
+        
+        steps:
+            ## 检出工程
+            - uses: actions/checkout@v3
+              with: 
+                submodules: 'true'
+
+            ## 配置环境
+            - run: git config --global user.name github-actions[bot]
+            - run: git config --global user.email github-actions[bot]@users.noreply.github.com
+            - run: git config --global --add safe.directory /github/workspace
+          
+            ## 暂存文档
+            - run: mkdir ./.swap
+            - run: cp -r ./** ./.swap
+            - run: git add ./.swap
+            - run: git stash save ./.swap
+
+            ## 切换分支
+            - run: git fetch origin
+            - run: git checkout profile
+            - run: git submodule update
+            
+            ## 清理目录
+            - run: rm -rf ./profile
+            - run: mkdir ./profile/profile
+
+            ## 弹出文档
+            - run: git stash pop
+            - run: git commit -m '[Generate Profile] commit swap'
+            - run: mv ./.swap/* ./profile/profile
+            - run: git rm -rf ./.swap
+            
+            ## 推送文档
+            - run: git submodule foreach 'git fetch origin'
+            - run: git submodule foreach 'git checkout master'
+            - run: git submodule foreach 'git pull'
+            - run: git submodule foreach 'git commit -a -m "[Generate Profile] commit document"'
+            - run: git submodule foreach 'git commit push'
+            - run: git commit -a -m "[Generate Profile] commit submodule"
+            - run: git push
