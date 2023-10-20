@@ -32,6 +32,7 @@ jobs:
             
             ## 提交文档
             - run: mkdir ./profile/profile
+            - run: ls ./.swap
             - run: mv ./.swap/** ./profile/profile
             - run: rm -rf ./.swap
             - run: git submodule foreach 'git add ./profile/*'
