@@ -1,10 +1,10 @@
-name: Generate Profile
+name: Sync Profile
 on:
     push:
 
 jobs:
     doc:
-        name: Generate Profile
+        name: Sync Profile
         runs-on: ubuntu-latest
         
         steps:
@@ -28,22 +28,15 @@ jobs:
             - run: git fetch origin
             - run: git checkout profile
             - run: git submodule update
-            
-            ## 清理目录
+            - run: git submodule foreach 'git checkout master'
             - run: rm -rf ./profile/**
             - run: mkdir ./profile/profile
-
-            ## 弹出文档
+            
+            ## 提交文档
             - run: git stash pop
-            - run: git commit -m '[Generate Profile] commit swap'
             - run: mv ./.swap/** ./profile/profile
             - run: git rm -rf ./.swap
-            
-            ## 推送文档
-            - run: git submodule foreach 'git fetch origin'
-            - run: git submodule foreach 'git checkout master'
-            - run: git submodule foreach 'git pull'
-            - run: git submodule foreach 'git commit -a -m "[Generate Profile] commit document"'
+            - run: git submodule foreach 'git commit -a -m "[Sync Profile] commit profile"'
             - run: git submodule foreach 'git push'
-            - run: git commit -a -m "[Generate Profile] commit submodule"
+            - run: git commit -a -m "[Sync Profile] commit submodule"
             - run: git push
