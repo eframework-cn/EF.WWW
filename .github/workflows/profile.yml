@@ -12,6 +12,10 @@ jobs:
             - uses: actions/checkout@v4
               with:
                 repository: 'eframework-cn/EF.WWW'
+            
+            - uses: actions/checkout@v4
+              with:
+                repository: 'eframework-cn/.github'
 
             ## 配置环境
             - run: git config --global user.name github-actions[bot]
