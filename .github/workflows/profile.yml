@@ -16,7 +16,7 @@ jobs:
             
             - uses: actions/checkout@v4
               with:
-                token: '${{ github.token }}'
+                token: '${{ secrects.PAT_ACTION }}'
                 repository: 'eframework-cn/.github'
                 path: 'dst'
                 
