@@ -30,7 +30,7 @@ jobs:
             - run: git submodule update
             
             ## 清理目录
-            - run: rm -rf ./profile
+            - run: rm -rf ./profile/**
             - run: mkdir ./profile/profile
 
             ## 弹出文档
