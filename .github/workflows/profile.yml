@@ -11,7 +11,7 @@ jobs:
             ## 检出工程
             - uses: actions/checkout@v4
               with:
-                repository: 'https://github.com/eframework-cn/EF.WWW.git'
+                repository: 'eframework-cn/EF.WWW'
 
             ## 配置环境
             - run: git config --global user.name github-actions[bot]
