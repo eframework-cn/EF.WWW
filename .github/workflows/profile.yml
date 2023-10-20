@@ -24,15 +24,14 @@ jobs:
             - run: git config --global user.email github-actions[bot]@users.noreply.github.com
             - run: git config --global --add safe.directory /github/workspace
 
-            ## 清理目录
-            - run: cd ./dst
-            - run: git rm -rf ./profile
-            - run: git commit -am "[Sync Profile] commit temporary"
-            - run: mkdir ./profile
-              
-            ## 移动文档
-            - run: cp -r ../src/** ./profile
-            - run: git add ./profile/*
-            - run: git commit -am "[Sync Profile] commit profile"
-            - run: git push
-            
+            ## 执行同步
+            - name: Run sync
+              run: |
+                cd ./dst
+                git rm -rf ./profile
+                git commit -am "[Sync Profile] commit temporary"
+                mkdir ./profile
+                cp -r ../src/** ./profile
+                git add ./profile/*
+                git commit -am "[Sync Profile] commit profile"
+                git push
