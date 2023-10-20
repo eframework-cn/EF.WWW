@@ -11,7 +11,6 @@ jobs:
             ## 检出工程
             - uses: actions/checkout@v3
               with: 
-                token: ${{ secrets.PAT_CI_TOKEN }}
                 submodules: 'true'
 
             ## 配置环境
@@ -38,6 +37,7 @@ jobs:
             - run: git submodule foreach 'git add ./profile/*'
             - run: ls ./profile/profile
             - run: git submodule foreach 'git commit -a -m "[Sync Profile] commit profile"'
+            - run: git submodule foreach 'git status'
             - run: git submodule foreach 'git push'
             - run: git commit -a -m "[Sync Profile] commit submodule"
             - run: git push
