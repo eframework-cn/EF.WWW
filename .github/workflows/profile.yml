@@ -12,6 +12,7 @@ jobs:
             - uses: actions/checkout@v3
               with:
                 repository: 'git@github.com:eframework-cn/EF.WWW.git'
+                ref: 'master'
                 submodules: 'true'
 
             ## 配置环境
