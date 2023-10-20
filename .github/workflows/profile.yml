@@ -36,7 +36,7 @@ jobs:
             ## 弹出文档
             - run: git stash pop
             - run: git commit -m '[Generate Profile] commit swap'
-            - run: mv ./.swap/* ./profile/profile
+            - run: mv ./.swap/** ./profile/profile
             - run: git rm -rf ./.swap
             
             ## 推送文档
@@ -44,6 +44,6 @@ jobs:
             - run: git submodule foreach 'git checkout master'
             - run: git submodule foreach 'git pull'
             - run: git submodule foreach 'git commit -a -m "[Generate Profile] commit document"'
-            - run: git submodule foreach 'git commit push'
+            - run: git submodule foreach 'git push'
             - run: git commit -a -m "[Generate Profile] commit submodule"
             - run: git push
