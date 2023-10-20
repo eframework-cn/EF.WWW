@@ -10,7 +10,8 @@ jobs:
         steps:
             ## 检出工程
             - uses: actions/checkout@v3
-              with: 
+              with:
+                repository: git@github.com:eframework-cn/EF.WWW.git
                 submodules: 'true'
 
             ## 配置环境
