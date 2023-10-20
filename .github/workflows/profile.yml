@@ -21,8 +21,6 @@ jobs:
             ## 暂存文档
             - run: mkdir ./.swap
             - run: cp -r ./** ./.swap
-            - run: git add ./.swap
-            - run: git stash save ./.swap
 
             ## 切换分支
             - run: git fetch origin
@@ -33,9 +31,8 @@ jobs:
             - run: mkdir ./profile/profile
             
             ## 提交文档
-            - run: git stash pop
             - run: mv ./.swap/** ./profile/profile
-            - run: git rm -rf ./.swap
+            - run: rm -rf ./.swap
             - run: git submodule foreach 'git commit -a -m "[Sync Profile] commit profile"'
             - run: git submodule foreach 'git push'
             - run: git commit -a -m "[Sync Profile] commit submodule"
