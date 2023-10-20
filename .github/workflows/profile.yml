@@ -11,8 +11,7 @@ jobs:
             ## 检出工程
             - uses: actions/checkout@v3
               with:
-                repository: git@github.com:eframework-cn/EF.WWW.git
-                ref: master
+                repository: 'git@github.com:eframework-cn/EF.WWW.git'
                 submodules: 'true'
 
             ## 配置环境
