@@ -40,6 +40,9 @@
         <a href="https://github.com/wellshsu?tab=achievements" title="Quickdraw"><img src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png" width="20px;"/></a>
         <a href="https://github.com/wellshsu?tab=achievements" title="Pull Shark"><img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" width="20px;"/></a>
       </td>
+      <td align="center" valign="top">
+        <a href="https://github.com/lewissliu" title="Lewis Liu"><img src="https://avatars.githubusercontent.com/u/46239805?v=4" width="80px;"/><br/><sub><b>Lewis Liu</b></sub></a><br/>
+      </td>
     </tr>
   </tbody>
 </table>
