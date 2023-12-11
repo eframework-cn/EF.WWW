@@ -2,11 +2,11 @@
 Copyright (C) EFramework Co, Ltd. All rights reserved, Version 1.0
 
 ## LICENSE MATRIX
-|    ROLE/SCOPE    |    WIKI    |    SRC     |    PKG     |     PUBLISH     |
-| :--------------: | :--------: | :--------: | :--------: | :-------------: |
-|   CONTRIBUTOR    |    WRITE   |    WRITE   |    WRITE   |    UNLIMITED    |
-|   COMMERICAL     |    READ    |    READ    |    READ    | LICENSE-LIMITED |
-|   COMMUNITY      |    READ    |    DENY    |    DENY    |       DENY      |
+|    ROLE/SCOPE    |    WIKI    |    SRC     |    PKG     |     PUBLISH     |  
+| :--------------: | :--------: | :--------: | :--------: | :-------------: |  
+|   CONTRIBUTOR    |    WRITE   |    WRITE   |    WRITE   |    UNLIMITED    |  
+|   COMMERICAL     |    READ    |    READ    |    READ    | LICENSE-LIMITED |  
+|   COMMUNITY      |    READ    |    DENY    |    DENY    |       DENY      |  
 
 ## TERMS AND PRIVACY
 - Please follow the license matrix strictly.
