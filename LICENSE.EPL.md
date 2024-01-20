@@ -1,5 +1,5 @@
 # EFRAMEWORK PUBLIC LICENSE
-Copyright (C) EFramework Co, Ltd. All rights reserved, Version 1.0
+Copyright (C) EFramework Co., Ltd. All rights reserved, Version 1.0
 
 ## LICENSE MATRIX
 |    ROLE/SCOPE    |    WIKI    |    SRC     |    PKG     |     PUBLISH     |  
